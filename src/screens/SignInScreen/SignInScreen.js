@@ -35,7 +35,7 @@ const SignInScreen = () => {
         } finally {
             setLoading(false);
         }
-        navigation.navigate("HomeScreen");
+        // navigation.navigate("HomeScreen");
 
     };
 
