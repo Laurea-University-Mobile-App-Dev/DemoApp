@@ -1,7 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import CustomButtons from '../../components/CustomButtons';
+import SocialSignInButtons from '../../components/SocialSignInButtons';
+import { useNavigation } from '@react-navigation/native';
 
 const ContactScreen = () => {
+    const navigation = useNavigation();
+
+
+    const goHome = async () => {
+
+        navigation.navigate("HomeScreen");
+
+    };
     // Données de l'entreprise
     const companyData = {
         name: "Nom de l'entreprise",
@@ -25,6 +36,11 @@ const ContactScreen = () => {
                 <Text style={{ fontWeight: 'bold' }}>Phone number:</Text>
                 <Text>{companyData.phone}</Text>
             </View>
+            < CustomButtons
+                text={"Go back"}
+                onPressed={goHome}
+                type={"PRIMARY"}
+            />
             {/* Ajoutez d'autres informations de l'entreprise si nécessaire */}
         </View>
     );
